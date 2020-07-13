@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+  <!-- etc... -->
+</HEAD>
+<BODY>
+<div class='report'>
+  <% if @incidents.nil? || @incidents.empty? %>
+    <p>
+      Nothing to report!
+    </p>
+  <% else %>
+    <% @incidents.each do |incident| %>
+      <div class='single-incident'>
+        <h4>
+          <a href=<%=incident.url%>><%= "#{incident.created_at.hour}:#{incident.created_at.min} - #{incident.summery}"%></a>
+        </h4>
+        <p>
+          <div style="color:#A9A9A9"><u style="color:black">Diagnosis:</u> what went wrong, and what caused it? <br/></div>
+          <div style="color:#A9A9A9"><u style="color:black">Actions taken:</u> what you do? <br/></div>
+          <div style="color:#A9A9A9"><u style="color:black">Impact:</u> what is the business impact for riskified, and engineering impact for DEV <br/></div>
+          <div style="color:#A9A9A9"><u style="color:black">Further action items:</u> what actions should relevant team/DEV/Product take to prevent this <br/></div>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</BODY>

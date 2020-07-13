@@ -1,0 +1,10 @@
+pager_duty_api:
+  token: <%= ENV['PD_TOKEN'] %>
+email:
+  auth_token: <%= ENV['EMAIL_TOKEN'] %>
+  subject_prefix: <%= ENV['EMAIL_SUBJECT'] || Shift summery %>
+shift_summery:
+  escalation_policy: <%= ENV['ESCALATION_POLICY_ID'] %>
+  schedule_id: <%= ENV['SCHEDULE_ID'] %>
+  recipient_email: <%= ENV['RECIPIENT_EMAIL'] || nil %>
+
